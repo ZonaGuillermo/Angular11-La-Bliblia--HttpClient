@@ -1,0 +1,23 @@
+<h1>{{ title }}</h1>
+
+<button (click)="onClickButton()">Pulsa-me</button>
+
+<form [formGroup]="formPost" (submit)="onSubmit()">
+  <label for="userId">userId</label>
+  <input type="text" id="userId" formControlName="userId">
+
+  <label for="title">title</label>
+  <input type="text" id="title" formControlName="title">
+
+  <label for="body">body</label>
+  <input type="text" id="body" formControlName="body">
+
+  <input type="submit" value="Enviar">
+</form>
+
+<div class="container">
+  <div class="card" *ngFor="let post of arrPosts" (click)="onClick(post.id)">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body }}</p>
+  </div>
+</div>

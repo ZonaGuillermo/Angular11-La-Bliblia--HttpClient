@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+h3 {
+	margin: 2rem 0;
+}
+
+.menu {
+	display: flex;
+	list-style: none;
+}
+
+.menu li {
+	padding: 0.5rem 2rem;
+	background-color: hsl(100, 100%, 40%);
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+.menu li:first-child {
+	border-top-left-radius: 10px;
+}
+
+.menu li:last-child {
+	border-top-right-radius: 10px;
+}
+
+.menu li:hover {
+	filter:brightness(1.05);
+}
+
+.menu li a {
+	color: white;
+	text-decoration: none;
+}
