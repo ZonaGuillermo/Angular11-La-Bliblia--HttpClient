@@ -1,12 +1,9 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: sans-serif;
-}
-
 h3 {
 	margin: 2rem 0;
+}
+
+h1, h3 {
+	color: white;
 }
 
 .menu {
@@ -18,7 +15,7 @@ h3 {
 	padding: 0.5rem 2rem;
 	background-color: hsl(100, 100%, 40%);
 	font-size: 1.2rem;
-	cursor: pointer;
+	color: white;
 }
 
 .menu li:first-child {
@@ -29,11 +26,13 @@ h3 {
 	border-top-right-radius: 10px;
 }
 
-.menu li:hover {
-	filter:brightness(1.05);
+.menu li:not(.disabled):hover{
+	cursor: pointer;
+	filter: brightness(1.05);
 }
 
-.menu li a {
-	color: white;
-	text-decoration: none;
+
+.disabled {
+	filter:saturate(.3);
+	pointer-events: none;
 }

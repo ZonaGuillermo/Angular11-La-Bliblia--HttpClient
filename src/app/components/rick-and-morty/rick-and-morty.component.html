@@ -1,14 +1,12 @@
 <h1>Rick and Morty API</h1>
 
-{{ info | json }}
-
-<h3>Paginas: {{ info.pages }}</h3>
+<h3>Paginas {{ currentPage }} de {{ info.pages }}</h3>
 
 <ul class="menu">
-	<li><a routerLink="prev">Anterior</a></li>
-	<li><a routerLink="next">Siguiente</a></li>
+	<li (click)="loadPage(currentPage-1)" [ngClass]="{ 'disabled': info.prev === null }">Anterior</li>
+	<li (click)="loadPage(currentPage+1)" [ngClass]="{ 'disabled': info.next === null }">Siguiente</li>
 </ul>
 
 <hr>
 
-<router-outlet></router-outlet>
+<app-characters-list [characters]="characters"></app-characters-list>

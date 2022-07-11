@@ -9,14 +9,20 @@ import { RickAndMortyService } from 'src/app/services/rick-and-morty.service';
 export class RickAndMortyComponent implements OnInit {
 
   info: any = {}
+  currentPage: number = 1;
   characters: any[] = []
 
   constructor(private rickAndMortyService: RickAndMortyService) { }
 
   ngOnInit(): void {
-    this.rickAndMortyService.getAllCharacters().subscribe((result) => {
-      this.info = result.info
-      this.characters = result.results
+    this.loadPage();
+  }
+
+  loadPage(page: number = 1): void {
+    this.currentPage = page;
+    this.rickAndMortyService.getAll(page).subscribe((data) => {
+      this.info = data.info
+      this.characters = data.results
     })
   }
 

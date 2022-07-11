@@ -1,1 +1,7 @@
-<p>characters-list works!</p>
+<div class="container">
+	<div *ngFor="let character of characters" class="card" [ngClass]="{ 'alive': character.status === 'Alive', 'dead': character.status === 'Dead' }">
+		<h3>{{ character.name }}</h3>
+		<img [src]="character.image" [alt]="character.name">
+		<p>{{ character.species }}</p>
+	</div>
+</div>

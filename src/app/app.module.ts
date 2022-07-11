@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { CountriesComponent } from './components/countries/countries.component';
@@ -20,7 +19,6 @@ import { CharactersListComponent } from './components/rick-and-morty/characters-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule
   ],

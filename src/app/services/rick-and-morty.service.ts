@@ -11,7 +11,7 @@ export class RickAndMortyService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllCharacters(): Observable<any> {
-    return this.httpClient.get<any>(`${this.baseUrl}/character`);
+  getAll(numPage: number = 1): Observable<any> {
+    return this.httpClient.get<any>(`${this.baseUrl}/character/?page=${numPage}`);
   }
 }
